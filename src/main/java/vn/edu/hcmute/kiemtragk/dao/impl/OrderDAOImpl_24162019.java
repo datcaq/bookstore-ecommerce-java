@@ -128,4 +128,54 @@ public class OrderDAOImpl_24162019 extends BaseDAO_24162019 implements OrderDAO_
           return order;
         });
   }
+
+  @Override
+  public List<Order_24162019> findByUser(int userId) {
+    return read(
+        em ->
+            em.createQuery(
+                    "select o from Order o where o.user.id=:uid order by o.orderDate desc, o.id desc",
+                    Order_24162019.class)
+                .setParameter("uid", userId)
+                .getResultList());
+  }
+
+  @Override
+  public List<Order_24162019> findByUserAndStatus(int userId, String status) {
+    return read(
+        em ->
+            em.createQuery(
+                    "select o from Order o where o.user.id=:uid and o.status=:status order by o.orderDate desc, o.id desc",
+                    Order_24162019.class)
+                .setParameter("uid", userId)
+                .setParameter("status", status)
+                .getResultList());
+  }
+
+  @Override
+  public Order_24162019 findByIdAndUser(int orderId, int userId) {
+    return read(
+        em -> {
+          Order_24162019 order =
+              em.createQuery(
+                      "select o from Order o where o.id=:oid and o.user.id=:uid",
+                      Order_24162019.class)
+                  .setParameter("oid", orderId)
+                  .setParameter("uid", userId)
+                  .getResultStream()
+                  .findFirst()
+                  .orElse(null);
+
+          if (order != null) {
+            List<OrderItem_24162019> items =
+                em.createQuery(
+                        "select oi from OrderItem oi join fetch oi.book where oi.order.id=:oid",
+                        OrderItem_24162019.class)
+                    .setParameter("oid", orderId)
+                    .getResultList();
+            order.setItems(items);
+          }
+          return order;
+        });
+  }
 }

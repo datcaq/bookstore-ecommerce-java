@@ -21,6 +21,7 @@
 <c:when test="${not empty sessionScope.account}">
 <c:if test="${!sessionScope.account.admin}">
 <a href="${pageContext.request.contextPath}/cart">Giỏ hàng</a>
+<a href="${pageContext.request.contextPath}/orders">Đơn hàng của tôi</a>
 </c:if>
 <c:if test="${sessionScope.account.admin}">
 <a href="${pageContext.request.contextPath}/admin">Trang quản trị</a>

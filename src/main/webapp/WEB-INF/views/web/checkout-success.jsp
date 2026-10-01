@@ -34,7 +34,7 @@ Thông tin đơn hàng #${order.id}
 <dd><strong>COD</strong> - Thanh toán khi nhận hàng</dd>
 
 <dt>Trạng thái đơn hàng:</dt>
-<dd><span style="display: inline-block; background: #dce9df; color: #1e473b; padding: 3px 10px; border-radius: 4px; font-weight: 600; font-size: 13px;">Đơn hàng mới</span></dd>
+<dd><span style="display: inline-block; background: #dce9df; color: #1e473b; padding: 3px 10px; border-radius: 4px; font-weight: 600; font-size: 13px;"><c:out value="${order.statusLabel}"/></span></dd>
 
 <dt>Người nhận:</dt>
 <dd><c:out value="${order.receiverName}"/></dd>
@@ -78,7 +78,10 @@ Danh sách sản phẩm đã đặt
 </div>
 </c:if>
 
-<div>
+<div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+<a class="button" href="${pageContext.request.contextPath}/orders" style="background: #ffffff; color: #245742; border: 1px solid #245742; padding: 12px 24px; font-size: 15px;">
+Xem lịch sử đơn hàng
+</a>
 <a class="button" href="${pageContext.request.contextPath}/home" style="padding: 12px 28px; font-size: 15px;">
 Tiếp tục mua sắm
 </a>

@@ -10,6 +10,8 @@
 <filter-mapping><filter-name>Authentication</filter-name><url-pattern>/cart/*</url-pattern><dispatcher>REQUEST</dispatcher></filter-mapping>
 <filter-mapping><filter-name>Authentication</filter-name><url-pattern>/checkout</url-pattern><dispatcher>REQUEST</dispatcher></filter-mapping>
 <filter-mapping><filter-name>Authentication</filter-name><url-pattern>/checkout/*</url-pattern><dispatcher>REQUEST</dispatcher></filter-mapping>
+<filter-mapping><filter-name>Authentication</filter-name><url-pattern>/orders</url-pattern><dispatcher>REQUEST</dispatcher></filter-mapping>
+<filter-mapping><filter-name>Authentication</filter-name><url-pattern>/orders/*</url-pattern><dispatcher>REQUEST</dispatcher></filter-mapping>
 <filter-mapping><filter-name>Authentication</filter-name><url-pattern>/admin</url-pattern><dispatcher>REQUEST</dispatcher></filter-mapping>
 <filter-mapping><filter-name>Authentication</filter-name><url-pattern>/admin/*</url-pattern><dispatcher>REQUEST</dispatcher></filter-mapping>
 <filter><filter-name>Admin</filter-name><filter-class>vn.edu.hcmute.kiemtragk.filter.AdminFilter_24162019</filter-class></filter>
@@ -38,6 +40,10 @@
 <servlet-mapping><servlet-name>Checkout</servlet-name><url-pattern>/checkout</url-pattern></servlet-mapping>
 <servlet><servlet-name>CheckoutSuccess</servlet-name><servlet-class>vn.edu.hcmute.kiemtragk.controller.web.CheckoutSuccessController_24162019</servlet-class></servlet>
 <servlet-mapping><servlet-name>CheckoutSuccess</servlet-name><url-pattern>/checkout/success</url-pattern></servlet-mapping>
+<servlet><servlet-name>OrderHistory</servlet-name><servlet-class>vn.edu.hcmute.kiemtragk.controller.web.OrderHistoryController_24162019</servlet-class></servlet>
+<servlet-mapping><servlet-name>OrderHistory</servlet-name><url-pattern>/orders</url-pattern></servlet-mapping>
+<servlet><servlet-name>OrderDetail</servlet-name><servlet-class>vn.edu.hcmute.kiemtragk.controller.web.OrderDetailController_24162019</servlet-class></servlet>
+<servlet-mapping><servlet-name>OrderDetail</servlet-name><url-pattern>/orders/detail</url-pattern></servlet-mapping>
 <servlet><servlet-name>Login</servlet-name><servlet-class>vn.edu.hcmute.kiemtragk.controller.auth.LoginController_24162019</servlet-class></servlet>
 <servlet-mapping><servlet-name>Login</servlet-name><url-pattern>/login</url-pattern></servlet-mapping>
 <servlet><servlet-name>Register</servlet-name><servlet-class>vn.edu.hcmute.kiemtragk.controller.auth.RegisterController_24162019</servlet-class></servlet>

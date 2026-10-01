@@ -6,6 +6,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import vn.edu.hcmute.kiemtragk.util.OrderStatusUtil_24162019;
 
 @Entity(name = "Order")
 @Table(name = "orders")
@@ -95,6 +96,10 @@ public class Order_24162019 implements Serializable {
 
   public void setStatus(String status) {
     this.status = status;
+  }
+
+  public String getStatusLabel() {
+    return OrderStatusUtil_24162019.getLabel(this.status);
   }
 
   public String getReceiverName() {
