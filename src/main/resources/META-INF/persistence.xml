@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Jakarta Persistence API 3.1 uses the published persistence.xml 3.0 schema. -->
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd" version="3.0"><persistence-unit name="BookStoreGK_24162019" transaction-type="RESOURCE_LOCAL">
+<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+<class>vn.edu.hcmute.kiemtragk.entity.User_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.Book_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.Author_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.Rating_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.BookAuthor_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.BookAuthorId_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.RatingId_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.VietnameseTextConverter_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.Cart_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.CartItemId_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.CartItem_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.Order_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.OrderItemId_24162019</class>
+<class>vn.edu.hcmute.kiemtragk.entity.OrderItem_24162019</class>
+<exclude-unlisted-classes>true</exclude-unlisted-classes><properties>
+<property name="jakarta.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServerDialect"/>
+<property name="hibernate.hbm2ddl.auto" value="validate"/>
+<property name="hibernate.show_sql" value="false"/>
+</properties></persistence-unit></persistence>

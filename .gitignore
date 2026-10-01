@@ -1,0 +1,9 @@
+target/
+tmp/
+*.log
+src/main/resources/db-local.properties
+src/main/resources/mail-local.properties
+.idea/
+.settings/
+.classpath
+.project
